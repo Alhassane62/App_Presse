@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>liste Blog</title>
+</head>
+<body>
+    <button> <a href="{% url 'create_article' %}"> Ajouter un article </a> </button>
+    {% for article in articles %}
+        <h2> Titre : {{ article.titre_article }} </h2>
+        <p>#00AD{{ article.id}} </p>
+        <p> Description :{{ article.description }} </p>
+        <h6> Auteur : {{article.auteur}} </h6>
+        <button> <a href="{% url 'detail_article' article.id %}">Voir les détails</a> </button>
+        <hr>
+        <button> <a href="{% url 'update_article' article.id %}">Mettre a jour</a> </button>
+        <hr>
+        <button> <a href="{% url 'delete_article' article.id %}">Supprimer</a> </button>
+        <hr>
+    {% empty%}
+        <h3> Aucun article trouver </h3>
+    {% endfor %}
+</body>
+</html>

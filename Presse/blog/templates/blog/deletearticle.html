@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supprimer un article</title>
+</head>
+<body>
+
+    <h1>Suppression d'article</h1>
+
+    <p>
+        Êtes-vous sûr de vouloir supprimer l'article :
+        <strong>{{ article.titre }}</strong> ?
+    </p>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <button type="submit">
+            Oui, supprimer
+        </button>
+    </form>
+
+    <br>
+
+    <a href="{% url 'list_article' %}">
+        Annuler
+    </a>
+
+</body>
+</html>
