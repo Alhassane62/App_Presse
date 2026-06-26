@@ -1,0 +1,15 @@
+<h1>Créer un auteur</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit">
+            Créer
+        </button>
+    </form>
+
+    <a href="{% url 'list_auteur' %}">
+        Retour 
+    </a>

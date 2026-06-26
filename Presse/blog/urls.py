@@ -8,5 +8,11 @@ urlpatterns = [
     path('<int:pk>/delete/', views.delete_article, name = "delete_article"),
     
     
+    # url auteur 
+    path('liste/auteur', views.list_auteur, name="list_auteur"), 
+    path('<int:pk>/detail', views.detail_auteur, name = "detail_auteur"),
+    path('create/auteur', views.create_auteur, name="create_auteur"),
+    path('<int:pk>/update/article', views.update_auteur, name="update_auteur"),
+    
     
 ]

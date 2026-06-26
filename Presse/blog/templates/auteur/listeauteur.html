@@ -1,0 +1,9 @@
+<h1> Liste des auteurs <h1>
+<a href = "{% url 'create_auteur' %}"> Creer un auteur </a>
+{% for auteur in auteurs %}
+<h3> {{ auteur.nom }} - {{ auteur.prenom}}</h3>
+
+<button><a href ="{% url 'detail_auteur' auteur.id %}"> voir plus </a></button>
+<button> <a href = "{% url 'update_auteur' auteur.id %}"> Mettre a jour </a> </button> 
+
+{% endfor %}
